@@ -7,7 +7,6 @@ import {
   Home as HomeIcon,
   Work as WorkIcon,
   School as SchoolIcon,
-  Apps as AppsIcon,
   Mail as MailIcon,
   Close as CloseIcon
 } from "@mui/icons-material";

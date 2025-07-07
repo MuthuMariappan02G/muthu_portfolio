@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { Box, Typography, Card, CardMedia, CardContent, Button, Link } from '@mui/material';
 
 const Projectdetails = ({ img, title, url }) => {
