@@ -1,10 +1,10 @@
-import React from "react";
-import { TypeAnimation } from "react-type-animation";
-import { FaInstagram, FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+// import React from "react";
+// import { TypeAnimation } from "react-type-animation";
+import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { BsGithub } from "react-icons/bs";
 import { Box, Typography, IconButton, Stack } from "@mui/material";
 import BackGroundVedio1 from "../assets/vedio/background-loop1.mp4";
-import BackGroundVedio2 from "../assets/vedio/background-loop2.mp4";
+// import BackGroundVedio2 from "../assets/vedio/background-loop2.mp4";
 
 const Home = () => {
   return (
