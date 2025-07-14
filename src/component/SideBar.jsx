@@ -1,7 +1,5 @@
-import React, { useState } from "react";
-import {
-  Drawer, List, ListItemButton, ListItemIcon, ListItemText, IconButton
-} from "@mui/material";
+import { useState, useEffect } from "react";
+import { Drawer, List, ListItemButton, ListItemIcon, ListItemText, IconButton } from "@mui/material";
 import {
   Menu as MenuIcon,
   Home as HomeIcon,
@@ -39,11 +37,41 @@ const SideBar = () => {
     setOpen(false);
   };
 
+  useEffect(() => {
+    const handleScrollHighlight = () => {
+      let currentSection = null;
+      let minDistance = Infinity;
+
+      for (const { link } of iconData) {
+        const section = document.getElementById(link);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          const distance = Math.abs(rect.top - 80);
+
+          if (rect.top <= window.innerHeight && distance < minDistance) {
+            minDistance = distance;
+            currentSection = link;
+          }
+        }
+      }
+
+      if (currentSection && currentSection !== selectedLink) {
+        setSelectedLink(currentSection);
+      }
+    };
+
+    window.addEventListener("scroll", handleScrollHighlight, { passive: true });
+    handleScrollHighlight(); 
+
+    return () => {
+      window.removeEventListener("scroll", handleScrollHighlight);
+    };
+  }, [selectedLink]);
+
   return (
     <>
       {/* Mobile Menu Icon */}
-      <IconButton
-        onClick={toggleDrawer}
+      <IconButton onClick={toggleDrawer}
         sx={{
           position: "fixed", top: 16, right: 16, zIndex: 1300, color: "#000",
           display: { sm: "none", lg: "none", xl: "none" }
