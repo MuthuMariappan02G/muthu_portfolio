@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Drawer, List, ListItemButton, ListItemIcon, ListItemText, IconButton } from "@mui/material";
 import {
   Menu as MenuIcon,
@@ -14,14 +14,14 @@ const SideBar = () => {
   const [open, setOpen] = useState(false);
   const [selectedLink, setSelectedLink] = useState(null);
 
-  const iconData = [
-    { icon: <HomeIcon />, link: "main", text: "Home" },
-    { icon: <WorkIcon />, link: "work", text: "Work" },
-    { icon: <Diversity3Icon />, link: "projectwork", text: "ProjectWork" },
-    { icon: <SchoolIcon />, link: "education", text: "Education" },
-    // { icon: <AppsIcon />, link: "projects", text: "Project" },
-    { icon: <MailIcon />, link: "contact", text: "Contact" },
-  ];
+const iconData = useMemo(() => [
+  { icon: <HomeIcon />, link: "main", text: "Home" },
+  { icon: <WorkIcon />, link: "work", text: "Work" },
+  { icon: <Diversity3Icon />, link: "projectwork", text: "ProjectWork" },
+  { icon: <SchoolIcon />, link: "education", text: "Education" },
+  // { icon: <AppsIcon />, link: "projects", text: "Project" },
+  { icon: <MailIcon />, link: "contact", text: "Contact" },
+], []);
 
   const toggleDrawer = () => setOpen(!open);
 
@@ -66,7 +66,7 @@ const SideBar = () => {
     return () => {
       window.removeEventListener("scroll", handleScrollHighlight);
     };
-  }, [selectedLink]);
+  }, [selectedLink, iconData]);
 
   return (
     <>
