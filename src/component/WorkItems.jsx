@@ -2,7 +2,6 @@
 import { Box, Typography, Stack } from "@mui/material";
 
 const Workitems = ({ year, role, name, description }) => {
-
   return (
     <Box sx={{ position: "relative", borderLeft: "2px solid #D6D6D6", pl: 2, mb: 0 }}>
       {/* Circle Marker */}

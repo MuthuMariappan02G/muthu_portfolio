@@ -1,5 +1,5 @@
 // import React from "react";
-import { Typography, Stack, Container } from "@mui/material";
+import { Typography, Stack, Container, Box } from "@mui/material";
 import Workitems from "./WorkItems";
 
 const cmpyDetails = [
@@ -18,7 +18,6 @@ const cmpyDetails = [
     )
   }
 ];
-
 
 const workingProjectDetails = [
   {
@@ -81,31 +80,36 @@ const educationDetails = [
 const Work = () => {
   return (
     <>
-      <Container id="work" maxWidth="md" sx={{ py: 8 }}>
-        <Typography variant="h4" fontWeight="bold" textAlign="center" color="#00172D" py={2}> Work </Typography>
+      <Box id="work" sx={{ width: "100%", backgroundColor: "#f3f6f9", py: 4}}>
+        <Container id="work" maxWidth="md" sx={{ py: 8 }}>
+          <Typography variant="h4" fontWeight="bold" textAlign="center" color="#00172D" py={2}> Work </Typography>
+            <Stack spacing={0}>
+              {cmpyDetails.map((item, index) => (
+                <Workitems key={index} year={item.year} role={item.role} name={item.name} description={item.description} />
+              ))}
+            </Stack>
+        </Container>
+      </Box>
+      <Box id="work" sx={{ width: "100%", backgroundColor: "#f3f6f9", py: 4}}>
+        <Container id="projectwork" maxWidth="md">
+          <Typography variant="h4" fontWeight="bold" textAlign="center" color="#00172D" py={4}> Work Project </Typography>
           <Stack spacing={0}>
-            {cmpyDetails.map((item, index) => (
+            {workingProjectDetails.map((item, index) => (
               <Workitems key={index} year={item.year} role={item.role} name={item.name} description={item.description} />
             ))}
           </Stack>
-      </Container>
-      <Container id="projectwork" maxWidth="md">
-        <Typography variant="h4" fontWeight="bold" textAlign="center" color="#00172D" py={4}> Work Project </Typography>
-        <Stack spacing={0}>
-          {workingProjectDetails.map((item, index) => (
-            <Workitems key={index} year={item.year} role={item.role} name={item.name} description={item.description} />
-          ))}
-        </Stack>
-      </Container>
-
-      <Container id="education" maxWidth="md" sx={{ py: 3 }}>
-        <Typography variant="h4" fontWeight="bold" textAlign="center" color="#00172D" py={2}> Education </Typography>
-          <Stack spacing={0}>
-            {educationDetails.map((item, index) => (
-              <Workitems key={index} year={item.year} role={item.role} name={item.name} description={item.description} />
-            ))}
-          </Stack>
-      </Container>
+        </Container>
+      </Box>
+      <Box id="work" sx={{ width: "100%", backgroundColor: "#f3f6f9", py: 4}}>
+        <Container id="education" maxWidth="md" sx={{ py: 3 }}>
+          <Typography variant="h4" fontWeight="bold" textAlign="center" color="#00172D" py={2}> Education </Typography>
+            <Stack spacing={0}>
+              {educationDetails.map((item, index) => (
+                <Workitems key={index} year={item.year} role={item.role} name={item.name} description={item.description} />
+              ))}
+            </Stack>
+        </Container>
+      </Box>
     </>
   );
 };
