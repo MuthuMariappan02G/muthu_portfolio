@@ -25,14 +25,14 @@ const Projectdetails = ({ img, title, url }) => {
         }}
       >
         <CardContent sx={{ textAlign: 'center' }}>
-          <Typography variant="h5" component="h3" sx={{ color: 'white', fontWeight: 'bold' }}>
+          <Typography variant="h5" component="h3" sx={{ fontWeight: 'bold' }}>
             {title}
           </Typography>
-          <Typography sx={{ color: 'white', mt: 1 }}>React Js</Typography>
+          <Typography sx={{ mt: 1 }}>React Js</Typography>
           <Link href={url} target="_blank" underline="none">
             <Button
               variant="contained"
-              sx={{ mt: 2, backgroundColor: 'white', color: 'gray.800', fontWeight: 'bold',
+              sx={{ mt: 2, color: 'gray.800', fontWeight: 'bold',
                 '&:hover': { backgroundColor: 'gray.200' },
               }}
             >

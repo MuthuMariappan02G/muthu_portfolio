@@ -6,6 +6,7 @@ import {
   Work as WorkIcon,
   School as SchoolIcon,
   Mail as MailIcon,
+  Apps as AppsIcon,
   Close as CloseIcon
 } from "@mui/icons-material";
 import Diversity3Icon from '@mui/icons-material/Diversity3';
@@ -19,7 +20,7 @@ const iconData = useMemo(() => [
   { icon: <WorkIcon />, link: "work", text: "Work" },
   { icon: <Diversity3Icon />, link: "projectwork", text: "ProjectWork" },
   { icon: <SchoolIcon />, link: "education", text: "Education" },
-  // { icon: <AppsIcon />, link: "projects", text: "Project" },
+  { icon: <AppsIcon />, link: "projects", text: "Project" },
   { icon: <MailIcon />, link: "contact", text: "Contact" },
 ], []);
 
