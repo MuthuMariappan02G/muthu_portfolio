@@ -71,7 +71,6 @@ const iconData = useMemo(() => [
 
   return (
     <>
-      {/* Mobile Menu Icon */}
       <IconButton onClick={toggleDrawer}
         sx={{
           position: "fixed", top: 16, right: 16, zIndex: 1300, color: "#000",
@@ -81,7 +80,6 @@ const iconData = useMemo(() => [
         <MenuIcon />
       </IconButton>
 
-      {/* Mobile Sidebar */}
       <Drawer anchor="left" open={open} onClose={toggleDrawer}>
         <IconButton sx={{ display: "flex", justifyContent: "flex-end", p: 1, color: "#000" }}>
           <CloseIcon onClick={toggleDrawer} />
@@ -103,7 +101,6 @@ const iconData = useMemo(() => [
         </List>
       </Drawer>
 
-      {/* Desktop Sidebar */}
       <List
         sx={{
           position: "fixed", top: "50%", left: 16, gap: 2, padding: 1,
