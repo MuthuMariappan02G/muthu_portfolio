@@ -13,12 +13,9 @@ const Home = () => {
         justifyContent: "center", alignItems: "center",
       }}
     >
-      {/* Background Video */}
       <video className="video-bg" src={BackGroundVedio1} autoPlay loop muted
         style={{ position: "absolute", width: "100%", height: "100vh", objectFit: "cover", zIndex: -10 }}
       />
-
-      {/* Overlay Content */}
       <Box sx={{ textAlign: "center", maxWidth: 700 }}>
         <Typography
           variant="h3"
@@ -32,8 +29,6 @@ const Home = () => {
           I'm a Front-End Developer
           {/* <TypeAnimation sequence={["Developer."]} cursor repeat={Infinity} /> */}
         </Typography>
-
-        {/* Social Icons */}
         <Stack direction="row" justifyContent="center" spacing={2} mt={2}>
           <IconButton href="#" 
             sx={{ color: "#000", "&:hover": { color: "#000", transform: "scale(1.2)" } }}
